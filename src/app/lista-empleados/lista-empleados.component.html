@@ -1,0 +1,46 @@
+<h2>Lista Empleados</h2>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>RUT Empleado</th>
+      <th>Nombre Completo</th>
+      <th>Email</th>
+      <th>Nombre Empresa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of empleados">
+      <td>{{ empleado.rut_empleado }}</td>
+      <td>{{ empleado.nombre_completo }}</td>
+      <td>{{ empleado.email }}</td>
+      <td>{{ empleado.nombre_empresa }}</td>
+
+      <button
+        (click)="actualizarEmpleado(empleado.id)"
+        class="btn btn-info my-2"
+      >
+        Editar
+      </button>
+
+      <button
+        (click)="eliminarEmpleado(empleado.id)"
+        class="btn btn-danger my-2"
+        style="margin-left: 10px"
+      >
+        Eliminar
+      </button>
+
+      <button
+        (click)="verDetallesDelEmpleado(empleado.id)"
+        class="btn btn-primary my-2"
+        style="margin-left: 10px"
+      >
+        Detalles
+      </button>
+    </tr>
+
+    <button (click)="agregarEmpleado()" class="btn btn-info mt-3">
+      Agregar Empleado
+    </button>
+  </tbody>
+</table>

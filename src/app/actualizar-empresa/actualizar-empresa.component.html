@@ -1,0 +1,135 @@
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Edición de empresa</h3>
+  <form (ngSubmit)="onSubmit()" #empleadoForm="ngForm">
+    <div class="form-group">
+      <label>Nombre Empresa : </label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        [(ngModel)]="empresa.nombre"
+        name="nombre"
+        required
+        minlength="4"
+        maxlength="50"
+        placeholder="Digite nombre de la empresa "
+        #nombre="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+      >
+        <div *ngIf="nombre.errors.required">
+          Digite el nombre de la empresa por favor
+        </div>
+        <div *ngIf="nombre.errors.minlength">
+          El nombre tiene que contener como minimo 4 caracteres
+        </div>
+        <div *ngIf="nombre.errors.maxlength">
+          El nombre tiene que tener como maximo 50 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Direccion : </label>
+      <input
+        type="text"
+        class="form-control"
+        id="direccion"
+        [(ngModel)]="empresa.direccion"
+        name="direccion"
+        required
+        minlength="4"
+        maxlength="100"
+        placeholder="Digite la direccion de la empresa"
+        #direccion="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)"
+      >
+        <div *ngIf="direccion.errors.required">
+          Digite la direccion completa por favor
+        </div>
+        <div *ngIf="direccion.errors.minlength">
+          La direccion completa tiene que contener como minimo 4 caracteres
+        </div>
+        <div *ngIf="direccion.errors.maxlength">
+          La direccion completa tiene que tener como maximo 100 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Rut Empresa : </label>
+      <input
+        type="text"
+        class="form-control"
+        id="rut_empresa"
+        [(ngModel)]="empresa.rut_empresa"
+        name="rut_empresa"
+        required
+        minlength="9"
+        maxlength="10"
+        placeholder="Digite su rut de la empresa a la que pertenece"
+        #rut_empresa="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          rut_empresa.invalid && (rut_empresa.dirty || rut_empresa.touched)
+        "
+      >
+        <div *ngIf="rut_empresa.errors.required">
+          Digite el RUT de la empresa completo por favor
+        </div>
+        <div *ngIf="rut_empresa.errors.minlength">
+          El RUT de la empresa tiene que contener como minimo 4 caracteres
+        </div>
+        <div *ngIf="rut_empresa.errors.maxlength">
+          El RUT de la empresa tiene que tener como maximo 10 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Numero Telefonico : </label>
+      <input
+        type="text"
+        class="form-control"
+        id="numero_telefonico"
+        [(ngModel)]="empresa.numero_telefonico"
+        name="numero_telefonico"
+        required
+        minlength="4"
+        maxlength="12"
+        placeholder="Digite el fono de la empresa"
+        #numero_telefonico="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          numero_telefonico.invalid &&
+          (numero_telefonico.dirty || numero_telefonico.touched)
+        "
+      >
+        <div *ngIf="numero_telefonico.errors.required">
+          Digite el n° telefonico de la empresa completo por favor
+        </div>
+        <div *ngIf="numero_telefonico.errors.minlength">
+          El n° telefonico de la empresa tiene que contener como minimo 4
+          caracteres
+        </div>
+        <div *ngIf="numero_telefonico.errors.maxlength">
+          El n° telefonico de la empresa tiene que tener como maximo 12
+          caracteres
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-success" [disabled]="!empleadoForm.form.valid">
+      Guardar
+    </button>
+  </form>
+</div>

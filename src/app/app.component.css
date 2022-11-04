@@ -1,0 +1,51 @@
+.bg {
+  background-color: #3d4fa4;
+}
+
+#header img {
+  width: 80px;
+}
+
+#main .carousel-inner img {
+  max-height: 70vh;
+  object-fit: cover;
+  filter: grayscale(70%);
+}
+
+#carousel {
+  position: relative;
+}
+
+#carousel .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+#carousel .overlay .container,
+#carousel .overlay .row {
+  height: 100%;
+}
+
+/*
+#footer {
+  background: linear-gradient(90deg, #7878da, #30216b 25%, #292985);
+}
+
+#footer h1 {
+  background-color: #292985;
+  color: white;
+  text-align: center;
+  font-size: medium;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  position:fixed;
+}
+*/

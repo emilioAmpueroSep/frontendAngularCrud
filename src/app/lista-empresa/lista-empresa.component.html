@@ -1,0 +1,40 @@
+<h2>Lista Empresas</h2>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Nombre Empresa</th>
+      <th>Direccion</th>
+      <th>Rut Empresa</th>
+      <th>N° Telefonico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empresa of empresas">
+      <td>{{ empresa.nombre }}</td>
+      <td>{{ empresa.direccion }}</td>
+      <td>{{ empresa.rut_empresa }}</td>
+      <td>{{ empresa.numero_telefonico }}</td>
+      <button (click)="actualizarEmpresa(empresa.id)" class="btn btn-info my-2">
+        Editar
+      </button>
+      <button
+        (click)="eliminarEmpresa(empresa.id)"
+        class="btn btn-danger my-2"
+        style="margin-left: 10px"
+      >
+        Eliminar
+      </button>
+      <button
+        (click)="verDetallesDelEmpresa(empresa.id)"
+        class="btn btn-primary my-2"
+        style="margin-left: 10px"
+      >
+        Detalles
+      </button>
+    </tr>
+
+    <button (click)="agregarEmpresa()" class="btn btn-info mt-3">
+      Agregar Empresa
+    </button>
+  </tbody>
+</table>
